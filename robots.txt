@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://smallgrivel.github.io/index-ssl-leisu-com/sitemap.xml

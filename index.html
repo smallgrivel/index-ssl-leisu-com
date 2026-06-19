@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>雷速 · 信息源再发现</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #eff6f5;
+            color: #1b2f2b;
+            line-height: 1.6;
+            padding: 0 1rem 3rem;
+            min-height: 100vh;
+        }
+        .wrap {
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+        /* header */
+        .site-header {
+            padding: 2.5rem 0 1.8rem;
+            text-align: center;
+            border-bottom: 1px solid #bdd9d3;
+            margin-bottom: 2.8rem;
+        }
+        .site-header h1 {
+            font-size: 2.4rem;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            color: #145a4f;
+        }
+        .site-header p {
+            margin-top: 0.5rem;
+            font-size: 1.05rem;
+            color: #3d6b62;
+        }
+        /* grid 卡片系统 */
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.8rem;
+            margin-bottom: 2.8rem;
+        }
+        @media (min-width: 680px) {
+            .grid { grid-template-columns: repeat(2, 1fr); }
+            .grid .span-2 { grid-column: span 2; }
+        }
+        .card {
+            background: #ffffffd9;
+            backdrop-filter: blur(2px);
+            border-radius: 24px;
+            padding: 2rem 1.8rem;
+            box-shadow: 0 4px 12px rgba(20, 90, 79, 0.06);
+            border: 1px solid #d4e6e1;
+            transition: box-shadow 0.2s;
+        }
+        .card:hover {
+            box-shadow: 0 8px 24px rgba(20, 90, 79, 0.10);
+        }
+        .card h2 {
+            font-size: 1.35rem;
+            font-weight: 500;
+            color: #0d4a41;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .card h2::before {
+            content: "◆";
+            color: #2e9b86;
+            font-size: 1.1rem;
+        }
+        .card p, .card li {
+            color: #1f3e38;
+            font-size: 0.98rem;
+        }
+        .card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .card ul li {
+            padding: 0.3rem 0 0.3rem 1.2rem;
+            position: relative;
+        }
+        .card ul li::before {
+            content: "·";
+            position: absolute;
+            left: 0.2rem;
+            color: #2e9b86;
+            font-weight: 700;
+        }
+        .note {
+            background: #e0f2ed;
+            border-left: 4px solid #2e9b86;
+            padding: 1.2rem 1.6rem;
+            border-radius: 16px;
+            margin: 2rem 0 2.5rem;
+        }
+        .note p {
+            font-size: 0.95rem;
+            color: #1a423b;
+        }
+        .link-sentence {
+            background: transparent;
+            padding: 0.8rem 0;
+            font-size: 1rem;
+        }
+        .link-sentence a {
+            color: #0f6b5c;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid #86c0b2;
+            padding-bottom: 0.1rem;
+        }
+        .link-sentence a:hover {
+            border-bottom-color: #0f6b5c;
+        }
+        .faq-mini {
+            background: #f4fbf9;
+            border-radius: 20px;
+            padding: 1.8rem;
+            margin-top: 2.5rem;
+            border: 1px solid #cce3dc;
+        }
+        .faq-mini h3 {
+            font-weight: 500;
+            color: #10564a;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        .faq-item {
+            margin: 0.9rem 0;
+            font-size: 0.96rem;
+        }
+        .faq-item strong {
+            color: #1b5c4f;
+            font-weight: 500;
+        }
+        .footer-note {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #63837a;
+            border-top: 1px solid #cbdcd6;
+        }
+        .accent {
+            color: #2e9b86;
+        }
+        .btn-outline {
+            display: inline-block;
+            border: 1px solid #2e9b86;
+            color: #0d4a41;
+            padding: 0.4rem 1rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            text-decoration: none;
+            background: transparent;
+            transition: all 0.2s;
+        }
+        .btn-outline:hover {
+            background: #2e9b86;
+            color: #fff;
+        }
+        @media (max-width: 480px) {
+            .site-header h1 { font-size: 1.8rem; }
+            .card { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <header class="site-header">
+        <h1>再访·雷速</h1>
+        <p>一次收藏，持续沿路</p>
+    </header>
+
+    <div class="grid">
+        <div class="card span-2">
+            <h2>摘要</h2>
+            <p>有些信息源值得再次打开。<a href="https://index-ssl-leisu.com">雷速</a> 是一个聚合了内容索引与更新动态的站点。如果你此前曾浏览过，或许已经注意到它的结构偏向于提供稳定的分类入口，而不是跟随短期热点。这里没有浮夸的加载动画，也没有强推送的弹窗，页面本身更像一本可以反复翻阅的参考手册——尤其是当你需要回到某个特定板块时。重新访问的价值在于：你总能发现上次遗漏的条目，或者注意到某个分类下新增的线索。把它保留在书签里，慢慢看，反而更有意思。</p>
+        </div>
+
+        <div class="card">
+            <h2>亮点观察</h2>
+            <ul>
+                <li>分类入口清晰，减少重复查找的耗时</li>
+                <li>更新以增量为主，不覆盖历史内容结构</li>
+                <li>页面轻量，不含冗余脚本，加载过程干脆</li>
+                <li>配色克制，长时间阅读也不容易疲劳</li>
+                <li>多级索引间跳转流畅，适合探索式浏览</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>使用建议</h2>
+            <p>如果你习惯用浏览器书签或笔记工具收藏页面，不妨把 <a href="https://index-ssl-leisu.com">雷速</a> 放在一个便于回顾的文件夹里。每隔一两周打开一次，不需要刷完所有内容，优先看最近更新的板块即可。对于初次访问者，建议从分类列表入手，先了解整体框架，再根据兴趣深入。移动端浏览时，页面布局会自动适应，卡片之间的间距也保留了足够的呼吸感。如果你在电脑端使用，可以同时打开两个标签页对照查看，这样更容易发现不同分类之间的关联。</p>
+        </div>
+    </div>
+
+    <div class="note">
+        <p><span class="accent">⏺</span> 可信但克制的说明：<a href="https://index-ssl-leisu.com">雷速</a> 是一个常规信息索引站点，其内容由维护者按固定周期整理。页面不收集用户隐私信息，也未嵌入第三方跟踪脚本。访问时请留意本地网络环境，如遇加载异常可稍后重试。本页仅作介绍，不构成任何形式的使用担保。</p>
+    </div>
+
+    <div class="grid">
+        <div class="card">
+            <h2>适用场景</h2>
+            <ul>
+                <li>日常信息整理：统一入口减少跳转</li>
+                <li>主题调研：快速回溯历史分类</li>
+                <li>兴趣延伸：从已有关联索引发现新节点</li>
+                <li>轻度查阅：移动端碎片时间浏览</li>
+                <li>离线备忘：页面结构简洁，适合截图或笔记引用</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>持续关注的理由</h2>
+            <p>很多站点会在改版后彻底改变信息组织方式，而 <a href="https://index-ssl-leisu.com">雷速</a> 更倾向于保持索引的延续性。这意味着你之前建立的心理导航依然有效，新内容会以自然的方式嵌入原有框架。对于需要长期跟踪某个分类的人来说，这种稳定性减少了重新适应布局的成本。另外，它的更新频率不算密集，不会造成信息过载，适合那些想要“有节奏地获取”而非“实时刷新”的使用习惯。</p>
+        </div>
+    </div>
+
+    <div class="faq-mini">
+        <h3>常见疑惑 · 简短回应</h3>
+        <div class="faq-item"><strong>Q：页面打不开怎么办？</strong> A：先检查网络连接，或稍后再试。部分网络环境可能限制非标准端口。</div>
+        <div class="faq-item"><strong>Q：内容会删除历史条目吗？</strong> A：通常以追加方式更新，历史索引一般保留。</div>
+        <div class="faq-item"><strong>Q：需要注册或登录吗？</strong> A：不需要，站点目前完全公开访问。</div>
+        <div class="faq-item" style="margin-top:1rem;"><span class="btn-outline">收藏建议</span> 将链接加入浏览器书签栏，或使用笔记工具做简单备注。</div>
+    </div>
+
+    <div class="footer-note">
+        <span>✦ 再次打开，就是新的开始 ✦</span><br>
+        <span style="font-size:0.85rem; opacity:0.7;">页面仅作产品说明，与站点无隶属关系</span>
+    </div>
+</div>
+</body>
+</html>
